@@ -1,100 +1,103 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { Briefcase, Code, ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      {/* Navigation */}
+      <header className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+          <div className="flex items-center">
+            <h1 className="text-2xl font-bold text-gray-900">CoFounder</h1>
+            <p className="ml-4 text-sm text-gray-500 hidden sm:block">
+              Find Your Perfect Technical Co-Founder
+            </p>
+          </div>
+          <nav>
+            <Link 
+              href="/auth/founder/signin"
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium mr-4"
+            >
+              Sign In
+            </Link>
+          </nav>
+        </div>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <main className="flex-grow flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div>
+            <h2 className="text-4xl font-extrabold text-gray-900 mb-6">
+              Bridge the Gap Between Ideas and Execution
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              CoFounder connects visionary founders with skilled technical 
+              co-founders who can transform innovative ideas into reality.
+            </p>
+            
+            {/* Signup Options */}
+            <div className="grid md:grid-cols-2 gap-4">
+              <Link 
+                href="/auth/founder/signup"
+                className="flex items-center justify-between bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition"
+              >
+                <div className="flex items-center">
+                  <Briefcase className="h-6 w-6 mr-3" />
+                  <span>I'm a Founder</span>
+                </div>
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+              
+              <Link 
+                href="/auth/developer/signup"
+                className="flex items-center justify-between bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700 transition"
+              >
+                <div className="flex items-center">
+                  <Code className="h-6 w-6 mr-3" />
+                  <span>I'm a Developer</span>
+                </div>
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Content - Illustration */}
+          <div className="hidden md:block">
+            <div className="bg-white rounded-lg shadow-xl p-8">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-indigo-50 rounded-lg p-4 transform hover:scale-105 transition">
+                  <h3 className="text-lg font-semibold text-indigo-800 mb-2">
+                    For Founders
+                  </h3>
+                  <p className="text-sm text-indigo-600">
+                    Find technical co-founders who share your vision and can 
+                    build your product from ground up.
+                  </p>
+                </div>
+                <div className="bg-green-50 rounded-lg p-4 transform hover:scale-105 transition">
+                  <h3 className="text-lg font-semibold text-green-800 mb-2">
+                    For Developers
+                  </h3>
+                  <p className="text-sm text-green-600">
+                    Discover exciting startup opportunities and join 
+                    innovative projects as a co-founder.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="bg-white border-t">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+          <p className="text-gray-500 text-sm">
+            © {new Date().getFullYear()} CoFounder. All rights reserved.
+          </p>
+        </div>
       </footer>
     </div>
   );
