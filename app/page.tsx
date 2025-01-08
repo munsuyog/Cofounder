@@ -40,7 +40,7 @@ export default function Home() {
             {/* Signup Options */}
             <div className="grid md:grid-cols-2 gap-4">
               <Link 
-                href="/auth/founder/signup"
+                href="/auth/founder/signin"
                 className="flex items-center justify-between bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition"
               >
                 <div className="flex items-center">
@@ -51,7 +51,7 @@ export default function Home() {
               </Link>
               
               <Link 
-                href="/auth/developer/signup"
+                href="/auth/developer/signin"
                 className="flex items-center justify-between bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700 transition"
               >
                 <div className="flex items-center">
