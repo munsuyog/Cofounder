@@ -40,7 +40,7 @@ export default function ConnectPage() {
       
     const githubClientId = process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID;
     // Make sure this exactly matches what's in your GitHub OAuth App settings
-    const redirectUri = encodeURIComponent(`http://localhost:3000/api/auth/github/callback`);
+    const redirectUri = encodeURIComponent(`https://cofounder-lake.vercel.app/api/auth/github/callback`);
     const state = userId;
     const scope = 'read:user,repo';
       

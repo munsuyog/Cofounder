@@ -20,7 +20,7 @@ export async function getGitHubProfile(code: string): Promise<IGithubData> {
         client_id: process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID,
         client_secret: process.env.GITHUB_CLIENT_SECRET,
         code: code,
-        redirect_uri: `http://localhost:3000/api/auth/github/callback`
+        redirect_uri: `https://cofounder-lake.vercel.app/api/auth/github/callback`
       }),
     });
 
